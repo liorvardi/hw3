@@ -70,7 +70,8 @@ def final_grade(input_path: str, output_path: str) -> int:
     f2 = open(output_path, 'w')
     for index in students_sorted:
         grade = calculate_final_grade(index, students[index])
-        f2.write(f"{index}, {students[index]}, {grade}\n")
+#        f2.write(f"{index}, {students[index]}, {grade}\n")
+        f2.write("{index}, {hw_grade}, {grade}\n".format(index=index, hw_grade=students[index], grade=grade))
         total_grade += grade
     f2.close()
     return int(total_grade/len(students))
