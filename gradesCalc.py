@@ -74,6 +74,11 @@ def final_grade(input_path: str, output_path: str) -> int:
         f2.write("{index}, {hw_grade}, {grade}\n".format(index=index, hw_grade=students[index], grade=grade))
         total_grade += grade
     f2.close()
+
+    # check if there is any students in the file
+    if len(students) == 0:
+        return 0
+
     return int(total_grade/len(students))
 # TODO: check if print \n in and of file
 

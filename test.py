@@ -9,6 +9,12 @@ def main():
     course_avg = final_grade(input_path=input_path, output_path=output_path)
     assert course_avg == 70
 
+    # Testing empty input
+    input_path_empty = 'tests/empty'
+    output_path_empty = 'tests/empty_out'
+    course_avg = final_grade(input_path=input_path_empty, output_path=output_path_empty)
+    assert course_avg == 0
+
     # Testing the `check_strings` function
     s1 = 'naanb'
     s2 = 'baNaNa'
